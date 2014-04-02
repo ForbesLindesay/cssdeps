@@ -10,6 +10,28 @@ Take some CSS, figure out what files it depends on.
 
     npm install cssdeps
 
+## Usage
+
+```js
+'use strict';
+
+var fs = require('fs');
+var assert = require('assert');
+var cssdeps = require('cssdeps');
+
+var fixture = fs.readFileSync(__dirname + '/fixture.css', 'utf8');
+
+assert.deepEqual(cssdeps(fixture), [
+  '/foo.css',
+  '../bar.css',
+  '../baz.css',
+  'crazy.css',
+  '../bing.css',
+  '../photo.png',
+  '../photoB.png'
+]);
+```
+
 ## License
 
   MIT
