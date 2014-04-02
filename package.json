@@ -1,6 +1,6 @@
 {
   "name": "cssdeps",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Take some CSS, figure out what files it depends on.",
   "keywords": [],
   "dependencies": {
