@@ -1,9 +1,14 @@
+@charset "UTF-8";
+
+/* this might look like a dependency, but the url is never actually loaded */
+@namespace svg url(http://www.w3.org/2000/svg);
+
 @import "/foo.css";
-@import '../bar.css';
-@import url('../baz.css');
+@import   '../bar.css';
+@import   url('../baz.css');
 @import url(crazy.css);
 @import url("../bing.css", relative);
-
+/* comment */
 .foo {
   background-image: url('../photo.png');
 }
@@ -13,6 +18,15 @@
 .bar {
   background-image: 'oh noes';
 }
-.bing {
-  background-image: url(../photoB.png);
+@media (max-width: 10px) {
+  .bing {
+    background-image: using url(../photoB.png);
+  }
+}
+
+@keyframes identifier {
+  0% { top: 0; left: 0; }
+  30% { top: 50px; }
+  68%, 72% { left: 50px; }
+  100% { top: 100px; left: 100%; }
 }
