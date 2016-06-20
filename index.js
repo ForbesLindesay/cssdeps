@@ -3,9 +3,11 @@
 var parse = require('css-parse');
 
 module.exports = detect;
-function detect(src) {
+function detect(src, opts) {
   var res = [];
-  parseDeps(parse(src), res);
+  if (!opts) opts = {};
+  if (!opts.source) opts.source = 'source.css';
+  parseDeps(parse(src, opts), res);
   return dedupe(res);
 }
 

@@ -22,9 +22,11 @@ var fs = require('fs');
 var assert = require('assert');
 var cssdeps = require('cssdeps');
 
-var fixture = fs.readFileSync(__dirname + '/fixture.css', 'utf8');
+var file = __dirname + '/fixture.css';
+var fixture = fs.readFileSync(file, 'utf8');
+var options = { source: file };
 
-assert.deepEqual(cssdeps(fixture), [
+assert.deepEqual(cssdeps(fixture, options), [
   '/foo.css',
   '../bar.css',
   '../baz.css',

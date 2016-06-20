@@ -18,3 +18,15 @@ test('gets deps', function () {
     '../photoB.png'
   ]);
 });
+
+test('syntax error message', function () {
+  assert.throws(function () {
+    cssdeps('body {');   // syntax error
+  }, /source\.css:1:7/); // expect error message to include file name (default: source.css)
+})
+
+test('pass opts to css-parse', function () {
+  assert.throws(function () {
+    cssdeps('body {', { source: 'index.css' });   // syntax error
+  }, /index\.css:1:7/); // expect error message to include file name (default: source.css)
+});
