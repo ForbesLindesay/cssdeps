@@ -5,8 +5,9 @@ var parse = require('css-parse');
 module.exports = detect;
 function detect(src, opts) {
   var res = [];
-  var options = Object.assign({ source: 'source.css' }, opts);
-  parseDeps(parse(src, options), res);
+  if (!opts) opts = {};
+  if (!opts.source) opts.source = 'source.css';
+  parseDeps(parse(src, opts), res);
   return dedupe(res);
 }
 
