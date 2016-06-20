@@ -53,9 +53,6 @@ function parseDeps(ast, res) {
     case 'keyframes':
     case 'comment':
       break;
-    default:
-      /* istanbul ignore next */
-      throw new Error('Unexpected AST type ' + ast.type);
   }
 }
 function findUrls(str) {
