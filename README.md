@@ -1,5 +1,7 @@
 # cssdeps
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/cssdeps.svg)](https://greenkeeper.io/)
+
 Take some CSS, figure out what files it depends on.
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/cssdeps/master.svg)](https://travis-ci.org/ForbesLindesay/cssdeps)
